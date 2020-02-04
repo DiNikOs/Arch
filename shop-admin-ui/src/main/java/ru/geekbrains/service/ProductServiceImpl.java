@@ -53,6 +53,7 @@ public class ProductServiceImpl implements ProductService, Serializable {
 
     @Override
     @Transactional
+    //TODO  паттерн "Адаптер" (Adapter)
     public void save(ProductRepr productRepr) throws IOException {
         Product product = (productRepr.getId() != null) ? productRepository.findById(productRepr.getId()).get()
                 : new Product();
