@@ -53,20 +53,25 @@ public class UserController {
     public String adminCreateUser(Model model) {
         model.addAttribute("create", true);
         model.addAttribute("activePage", "Users");
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new UserRepr());
         model.addAttribute("roles", roleRepository.findAll());
         return "user_form";
     }
 
     @PostMapping("/user")
-    public String adminUpsertUser(@Valid UserRepr user, Model model, BindingResult bindingResult) {
+    public String adminUpsertUser(@Valid UserRepr userRepr, Model model, BindingResult bindingResult) {
         model.addAttribute("activePage", "Users");
 
         if (bindingResult.hasErrors()) {
             return "user_form";
         }
 
-        userService.save(user);
+        if (!userRepr.getPassword().equals(userRepr.getMatchingPassword())) {
+            bindingResult.rejectValue("password", "", "Password not matching");
+            return "user_form";
+        }
+
+        userService.save(userRepr);
         return "redirect:/users";
     }
 

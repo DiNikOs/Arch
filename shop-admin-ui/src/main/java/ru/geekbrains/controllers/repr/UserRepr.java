@@ -33,7 +33,7 @@ public class UserRepr {
         this.id = user.getId();
         this.username = user.getUsername();
         this.password = user.getPassword();
-        this.matchingPassword = user.getPassword();
+        this.matchingPassword = getMatchingPassword();
         this.firstName = user.getFirstName();
         this.lastName = user.getLastName();
         this.email = user.getEmail();
