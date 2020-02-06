@@ -5,6 +5,7 @@ import ru.geekbrains.persist.model.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.Set;
 
+//TODO паттерн "Mediator" (посредник)
 public class UserRepr {
 
     private Long id;
