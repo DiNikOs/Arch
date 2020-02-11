@@ -25,7 +25,7 @@ public class Category implements Serializable {
     public Category() {
 
     }
-
+    //TODO pattern Data Mapper "преобразователь данных"
     public Long getId() {
         return id;
     }

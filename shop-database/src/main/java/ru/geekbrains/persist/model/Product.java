@@ -36,7 +36,7 @@ public class Product implements Serializable {
     public Product() {
 
     }
-
+    //TODO pattern Data Mapper "преобразователь данных"
     public Long getId() {
         return id;
     }

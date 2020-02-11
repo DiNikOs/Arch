@@ -41,6 +41,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    //TODO pattern Identity Map "коллекция объектов"
     public List<UserRepr> findAll() {
         return userRepository.findAll().stream()
                 .map(UserRepr::new)
@@ -48,6 +49,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    //TODO pattern Identity Map "коллекция объектов"
     public Optional<UserRepr> findById(Long id) {
         return userRepository.findById(id).map(UserRepr::new);
     }

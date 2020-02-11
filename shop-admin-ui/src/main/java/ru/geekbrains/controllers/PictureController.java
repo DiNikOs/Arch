@@ -27,6 +27,7 @@ public class PictureController {
     public void adminDownloadProductPicture(@PathVariable("pictureId") Long pictureId,
                                             HttpServletResponse response) throws IOException {
         logger.info("Picture {}", pictureId);
+        //TODO pattern Identity Map "коллекция объектов"
         Optional<Picture> picture = pictureRepository.findById(pictureId);
         if (picture.isPresent()) {
             response.setContentType(picture.get().getContentType());

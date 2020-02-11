@@ -22,7 +22,7 @@ public class PictureData implements Serializable {
 
     public PictureData() {
     }
-
+    //TODO pattern Data Mapper "преобразователь данных"
     public PictureData(byte[] data) {
         this.data = data;
     }

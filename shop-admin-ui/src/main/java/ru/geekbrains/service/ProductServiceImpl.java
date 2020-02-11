@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService, Serializable {
 
     @Override
     @Transactional
-    //TODO паттерн "Декоратор" (Decorator)
+    //TODO pattern Identity Map "коллекция объектов"
     public List<ProductRepr> findAll() {
         return productRepository.findAll().stream()
                 .map(ProductRepr::new)
@@ -53,7 +53,7 @@ public class ProductServiceImpl implements ProductService, Serializable {
 
     @Override
     @Transactional
-    //TODO  паттерн "Адаптер" (Adapter)
+    //TODO pattern Identity Map "коллекция объектов"
     public void save(ProductRepr productRepr) throws IOException {
         Product product = (productRepr.getId() != null) ? productRepository.findById(productRepr.getId()).get()
                 : new Product();
@@ -61,6 +61,7 @@ public class ProductServiceImpl implements ProductService, Serializable {
         product.setCategory(productRepr.getCategory());
         product.setBrand(productRepr.getBrand());
         product.setPrice(productRepr.getPrice());
+        //TODO pattern Identity Map "коллекция объектов"
         if (productRepr.getNewPictures() != null) {
             for (MultipartFile newPicture : productRepr.getNewPictures()) {
                 logger.info("Product {} file {} size {}", product.getId(),

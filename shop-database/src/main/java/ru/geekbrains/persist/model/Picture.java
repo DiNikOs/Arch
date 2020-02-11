@@ -28,7 +28,7 @@ public class Picture implements Serializable {
 
     public Picture() {
     }
-
+    //TODO pattern Data Mapper "преобразователь данных"
     public Picture(String name, String contentType, PictureData pictureData) {
         this.name = name;
         this.contentType = contentType;

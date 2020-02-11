@@ -22,7 +22,7 @@ public class Role implements Serializable {
 
     public Role() {
     }
-
+    //TODO pattern Data Mapper "преобразователь данных"
     public Role(String name) {
         this.name = name;
     }

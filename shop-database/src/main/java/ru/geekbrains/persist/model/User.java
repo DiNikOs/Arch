@@ -42,7 +42,7 @@ public class User implements Serializable {
     public User(String username, String password, String firstName, String lastName, String email) {
         this(username, password, firstName, lastName, email, new HashSet<>());
     }
-
+    //TODO pattern Data Mapper "преобразователь данных"
     public User(String username, String password, String firstName, String lastName, String email,
                 Set<Role> roles) {
         this.username = username;

@@ -6,7 +6,7 @@ import ru.geekbrains.persist.model.User;
 
 import java.util.Optional;
 
-
+//TODO pattern Data Mapper "преобразователь данных"
 public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query("from User u join fetch u.roles r where u.username = :username")
