@@ -17,6 +17,7 @@ public class PictureData implements Serializable {
 
     @Lob
 //    @Type(type="org.hibernate.type.BinaryType") // для правильной работы PostgreSQL
+    // TODO Magic Number // Магические числа
     @Column(name = "data", nullable = false, length = 33554430) // для правильной hibernate-валидации в MySQL
     private byte[] data;
 
